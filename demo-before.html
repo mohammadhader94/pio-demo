@@ -1,0 +1,40 @@
+<!DOCUMENT html>
+<html>
+<head></head>
+<body>
+	<h1>Linear Equation</h1>
+	<h4>Format: ( <strong>y = Ax + C </strong> ) where A and C are constants</h4>
+	Please enter A: <input type="number" value="0" id="number-a">
+	</br>
+	Please enter C: <input type="number" value="0" id="number-c">
+	</br>
+	<button onclick="calculate();" id="calculate">Calculate</button>
+	
+	<h2 id="result"></h2>
+	<script>
+		function calculate(){
+			var a = document.getElementById("number-a").value;
+			var c = document.getElementById("number-c").value;
+			
+			var result;
+			if (a === "0" && c === "0"){
+				result = "";
+			} else{
+				if(a === "0"){
+				result = "y = ";
+				} else if(a === "1"){
+					result = "y = " + "x";
+				} else{
+					result = "y = " + a + "x";
+				}
+			
+				if(c !== "0")
+					result = result + " + " + c;
+				
+			}
+			
+			document.getElementById("result").innerHTML = result;
+		}
+	</script>
+</body>
+</html>
